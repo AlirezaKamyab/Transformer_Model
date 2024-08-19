@@ -24,10 +24,13 @@ class PositionalEmbedding(torch.nn.Module):
         """
         super(PositionalEmbedding, self).__init__()
 
+        self.d_model = d_model
         self.embedding = torch.nn.Embedding(vocab_size, d_model, padding_idx=padding_idx)
         self.pos_encoding = PositionalEncoding(d_model, max_length)
 
     def forward(self, x):
         x = self.embedding(x)
+        # This factor sets the relative scale of the embedding and positonal_encoding.
+        x = x * torch.math.sqrt(self.d_model)
         x = self.pos_encoding(x)
         return x
