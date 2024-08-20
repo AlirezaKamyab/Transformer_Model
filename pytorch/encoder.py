@@ -73,7 +73,7 @@ class EncoderLayer(torch.nn.Module):
 
 
     def forward(self, x):
-        x = self.positional_embedding.cuda()(x)
+        x = self.positional_embedding(x)
         
         if self.dropout_rate > 0.0:
             x = self.dropout(x)
