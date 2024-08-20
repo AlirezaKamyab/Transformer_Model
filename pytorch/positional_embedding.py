@@ -1,5 +1,5 @@
 import torch
-from positional_encoding import PositionalEncoding
+from .positional_encoding import PositionalEncoding
 
 
 class PositionalEmbedding(torch.nn.Module):

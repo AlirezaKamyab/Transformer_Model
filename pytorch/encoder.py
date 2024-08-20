@@ -1,7 +1,7 @@
 import torch
-from attention import SelfAttention
-from feedforward import FeedForward
-from positional_embedding import PositionalEmbedding
+from .attention import SelfAttention
+from .feedforward import FeedForward
+from .positional_embedding import PositionalEmbedding
 
 
 class Encoder(torch.nn.Module):

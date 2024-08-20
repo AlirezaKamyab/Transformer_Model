@@ -1,7 +1,7 @@
 import torch
-from attention import CausalAttention, CrossAttention
-from feedforward import FeedForward
-from positional_embedding import PositionalEmbedding
+from .attention import CausalAttention, CrossAttention
+from .feedforward import FeedForward
+from .positional_embedding import PositionalEmbedding
 
 
 class Decoder(torch.nn.Module):

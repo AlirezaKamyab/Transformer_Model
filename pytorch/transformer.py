@@ -1,6 +1,6 @@
 import torch
-from encoder import EncoderLayer
-from decoder import DecoderLayer
+from .encoder import EncoderLayer
+from .decoder import DecoderLayer
 
 class Transformer(torch.nn.Module):
     def __init__(self, *, 
