@@ -31,6 +31,6 @@ class PositionalEmbedding(torch.nn.Module):
     def forward(self, x):
         x = self.embedding(x)
         # This factor sets the relative scale of the embedding and positonal_encoding.
-        x = x * torch.math.sqrt(self.d_model)
+        x = x * torch.sqrt(torch.tensor(self.d_model, dtype=torch.float32))
         x = self.pos_encoding(x)
         return x
